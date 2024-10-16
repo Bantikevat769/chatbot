@@ -1,0 +1,189 @@
+/* Reset styles */
+* {
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; /* Set font family */
+}
+
+/* Body styling */
+body {
+  width: 100%; /* Full width */
+  height: 100vh; /* Full height of the viewport */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center items vertically */
+  align-items: center; /* Center items horizontally */
+  transition: background-color 0.5s, color 0.5s; /* Smooth transition for background and text color */
+}
+
+body.light-mode {
+  background-color: #ffffff; /* Light mode background color */
+  color: #000000; /* Light mode text color */
+}
+
+body.dark-mode {
+  background-color: rgb(45, 52, 59); /* Dark mode background color */
+  color: #ffffff; /* Dark mode text color */
+}
+
+/* Theme toggle button styling */
+.theme-toggle {
+  position: fixed; /* Fixed position on the screen */
+  top: 20px; /* 20 pixels from the top */
+  right: 20px; /* 20 pixels from the right */
+  z-index: 1000; /* Ensure it stays on top of other elements */
+}
+
+#toggleButton {
+  padding: 10px 20px; /* Padding for button */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth background color change */
+}
+
+#toggleButton:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Light hover effect */
+}
+
+/* Chat container styling */
+.chat-container {
+  width: 100%; /* Full width */
+  max-width: 800px; /* Maximum width for better responsiveness */
+  height: 80%; /* Height of the chat container */
+  padding: 20px; /* Padding inside the chat container */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack children vertically */
+  gap: 20px; /* Space between chat items */
+  font-size: 20px; /* Font size */
+  overflow-y: auto; /* Enable vertical scrolling if content overflows */
+  background: rgba(255, 255, 255, 0.1); /* Slightly transparent background for contrast */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Soft shadow for depth */
+}
+
+/* Chat box styling */
+.user-chat-box,
+.ai-chat-box {
+  width: 100%; /* Full width for chat boxes */
+  position: relative; /* For absolute positioning of child elements */
+}
+
+/* User and AI chat area styling */
+.user-chat-area,
+.ai-chat-area {
+  width: 90%; /* Width of chat areas */
+  padding: 15px; /* Padding inside chat areas */
+  background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent background for chat areas */ /* Text color */
+  border-radius: 30px; /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Softer shadow */
+  transition: background-color 0.3s; /* Smooth transition for background color */
+  display: flex; /* Use flexbox for better alignment */
+  align-items: center; /* Center items vertically */
+}
+
+/* Hover effect on chat areas */
+.user-chat-area:hover,
+.ai-chat-area:hover {
+  background-color: rgba(255, 255, 255, 0.3); /* Slight hover effect */
+}
+
+/* Image styling */
+.chooseimg {
+  width: 30%; /* Width of the image */
+  border-radius: 15px; /* Softer radius for images */
+}
+
+/* User and AI image styling */
+#userImage,
+#aiImage {
+  width: 50px; /* Fixed width for images */
+  height: 50px; /* Fixed height for images */
+  border-radius: 50%; /* Circular images */
+  margin-right: 10px; /* Space between image and text */
+  filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.5)); /* Softer shadow for images */
+}
+
+/* Prompt area styling */
+.prompt-area {
+  width: 100%; /* Full width */
+  height: 20%; /* Height of the prompt area */
+  background-color: rgba(45, 52, 59, 0.9); /* Darker background for contrast */
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Center items vertically */
+  justify-content: space-between; /* Space between input and button */
+  padding: 10px 20px; /* Padding inside the prompt area */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+}
+
+/* Input field styling */
+.prompt-area input {
+  flex: 1; /* Take remaining space */
+  height: 60px; /* Height of the input field */
+  background-color: #222; /* Dark background for input field */
+  outline: none; /* Remove default outline */
+  border: none; /* Remove default border */
+  border-radius: 30px; /* Rounded corners */
+  padding: 10px 20px; /* Padding inside the input field */
+  color: white; /* Text color */
+  font-size: 18px; /* Font size */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Soft shadow */
+}
+
+/* Button styling */
+.prompt-area button {
+  width: 60px; /* Width of the button */
+  height: 60px; /* Height of the button */
+  border-radius: 50%; /* Circular button */
+  background-color: #444; /* Darker button color */
+  color: white; /* Text color */
+  border: none; /* Remove default border */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+/* Hover effect for button */
+.prompt-area button:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Light hover effect */
+  transform: scale(1.05); /* Slight scaling effect */
+}
+
+/* Loading image styling */
+.load {
+  filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.5)); /* Softer shadow for loading image */
+}
+
+/* Image selection styling */
+.choose {
+  width: 50px; /* Width for image selection */
+  height: 50px; /* Height for image selection */
+  border-radius: 50%; /* Circular images */
+}
+
+/* Image container styling */
+#image {
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 600px) {
+  .user-chat-box,
+  .ai-chat-box {
+    width: 90%; /* Increased width for mobile devices */
+    left: 5%; /* Centered */
+  }
+
+  .prompt-area input {
+    font-size: 16px; /* Reduced font size for mobile */
+  }
+
+  .prompt-area button {
+    width: 50px; /* Adjusted size for mobile */
+    height: 50px; /* Adjusted size for mobile */
+  }
+}
